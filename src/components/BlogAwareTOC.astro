@@ -1,0 +1,23 @@
+---
+import Default from '@astrojs/starlight/components/TableOfContents.astro';
+
+const routeId = Astro.locals.starlightRoute?.id ?? '';
+const isBlogPost =
+  (routeId === 'blog' || routeId.startsWith('blog/')) &&
+  !routeId.startsWith('blog/years') &&
+  !routeId.startsWith('blog/tags');
+---
+
+<Default {...Astro.props} />
+
+{isBlogPost && (
+  <nav class="blog-rail" aria-label="Browse blog">
+    <h2 class="blog-rail-title">Browse Blog</h2>
+    <ul class="blog-rail-list">
+      <li><a href="/blog/">All Posts</a></li>
+      <li><a href="/blog/years/">By Year</a></li>
+      <li><a href="/blog/tags/">By Tag</a></li>
+      <li><a href="/blog/tags/release/">Release Notes</a></li>
+    </ul>
+  </nav>
+)}

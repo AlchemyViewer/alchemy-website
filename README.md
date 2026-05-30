@@ -1,49 +1,147 @@
-# Starlight Starter Kit: Basics
+# Alchemy Website
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Documentation and content site for Alchemy Viewer, built with Astro + Starlight.
 
+## What This Repo Contains
+
+- Public docs and pages under `src/content/docs`
+- Blog posts and generated blog archive navigation under `src/content/docs/blog`
+- FAQ and Knowledge Base content with helper scripts for new entries
+- Site styling and assets for the Alchemy website
+
+## Requirements
+
+- Node.js 20+
+- Yarn 1.x (classic)
+
+## Local Development
+
+Install dependencies:
+
+```bash
+yarn install
 ```
-yarn create astro@latest -- --template starlight
+
+Start the dev server:
+
+```bash
+yarn dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Notes:
 
-## 🚀 Project Structure
+- `yarn dev` runs blog index generation first, then starts Astro on `http://localhost:4321`.
+- `yarn start` is the same as `yarn dev`.
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+## Build And Preview
 
+Create a production build:
+
+```bash
+yarn build
 ```
+
+Preview the build locally:
+
+```bash
+yarn preview
+```
+
+## Scripts
+
+| Command | Purpose |
+| :-- | :-- |
+| `yarn dev` | Generate blog indexes, then run local dev server |
+| `yarn build` | Generate blog indexes, then build the site |
+| `yarn preview` | Preview the built site |
+| `yarn blog:generate` | Regenerate blog overview, year, and tag pages |
+| `yarn new:faq "Question"` | Create a dated FAQ draft in `src/content/docs/faq/` |
+| `yarn new:kb "Title"` | Create a dated KB draft in `src/content/docs/knowledge-base/` |
+
+## Content Workflow
+
+## FAQ entries
+
+Create a new FAQ draft:
+
+```bash
+yarn new:faq "Why does X happen?"
+```
+
+Then edit the generated file in `src/content/docs/faq/`.
+
+## Knowledge Base articles
+
+Create a new KB draft:
+
+```bash
+yarn new:kb "How to fix Y"
+```
+
+Then edit the generated file in `src/content/docs/knowledge-base/`.
+
+## Blog posts
+
+Create a blog markdown file in `src/content/docs/blog/` named:
+
+```text
+YYYY-MM-DD-your-title.md
+```
+
+Recommended frontmatter:
+
+```md
+---
+title: Your Post Title
+description: One sentence summary for previews and RSS.
+date: 2026-05-30
+tags: [release, alchemy]
+---
+```
+
+After adding or editing posts, regenerate archive pages:
+
+```bash
+yarn blog:generate
+```
+
+`yarn dev` and `yarn build` already do this automatically.
+
+## Blog generation behavior
+
+`yarn blog:generate` does the following:
+
+- Scans `src/content/docs/blog/` for post files
+- Excludes reserved files (`index.md`, `posting-guide.md`, `authors.yml`) and generated folders (`years/`, `tags/`)
+- Rebuilds:
+  - `src/content/docs/blog/index.md`
+  - `src/content/docs/blog/years/index.md` and yearly pages
+  - `src/content/docs/blog/tags/index.md` and per-tag pages
+
+Because these files are generated, do not hand-edit `blog/index.md`, `blog/years/*`, or `blog/tags/*` directly.
+
+## Project Structure (high level)
+
+```text
 .
 ├── public/
+├── scripts/
+│   ├── generate-blog-index.mjs
+│   └── new-entry.mjs
 ├── src/
-│   ├── assets/
 │   ├── content/
 │   │   └── docs/
-│   └── content.config.ts
+│   │       ├── blog/
+│   │       ├── faq/
+│   │       ├── knowledge-base/
+│   │       └── ...
+│   └── styles/
 ├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+└── package.json
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## Related Internal Docs
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn dev`             | Starts local dev server at `localhost:4321`      |
-| `yarn build`           | Build your production site to `./dist/`          |
-| `yarn preview`         | Preview your build locally, before deploying     |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- Contributor content workflow: `src/content/docs/contributing/content-contributions.md`
+- Blog posting guide: `src/content/docs/blog/posting-guide.md`
+- Build docs for Alchemy viewer source: `src/content/docs/manual/build/index.md`

@@ -1,40 +1,68 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Alchemy Viewer
+description: A modern Second Life viewer focused on stability and performance.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  title: Alchemy Viewer
+  tagline: A Second Life viewer focused on stability, performance, and open-source innovation.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/alchemy_hero.webp
+    alt: Alchemy Viewer logo
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Download Latest Build
+      link: /downloads/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Read Blog
+      link: /blog/
+      variant: secondary
+    - text: Build & Setup
+      link: /manual/build/
+    - text: Join Discord
+      link: https://discordapp.com/invite/KugCgs6
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+<section class="home-section home-section--primary">
+  <h2>Start Here</h2>
+  <div class="home-panel-grid">
+    <a class="home-panel" href="/downloads/">
+      <h3>Download</h3>
+      <p>Get the latest Alchemy builds for Windows, macOS, and Linux from the current release channel.</p>
+      <span>Open Downloads</span>
+    </a>
+    <a class="home-panel" href="/blog/">
+      <h3>Blog</h3>
+      <p>Follow release notes, feature announcements, and development progress from the project team.</p>
+      <span>Read Updates</span>
+    </a>
+    <div class="home-panel home-panel--info">
+      <h3>Info and Help</h3>
+      <p>Find setup guides, answers to common questions, and project details in one place.</p>
+      <p class="home-panel-links">
+        <a href="/manual/build/">Manual</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/about/">About</a>
+        <a href="https://discordapp.com/invite/KugCgs6">Discord</a>
+      </p>
+    </div>
+  </div>
+</section>
 
-## Next steps
-
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
-</CardGrid>
+<section class="home-section">
+  <h2>Why Alchemy</h2>
+  <div class="home-panel-grid home-panel-grid--secondary">
+    <div class="home-panel">
+      <h3>Lightweight</h3>
+      <p>Resource-efficient with stable performance and practical defaults for everyday Second Life use.</p>
+    </div>
+    <div class="home-panel">
+      <h3>Cross Platform</h3>
+      <p>One viewer experience across Windows, macOS, and Linux with consistent update cadence.</p>
+    </div>
+    <div class="home-panel">
+      <h3>Open and Active</h3>
+      <p>Open-source development, active community support, and documentation that helps you solve problems quickly.</p>
+    </div>
+  </div>
+</section>

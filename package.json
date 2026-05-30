@@ -3,15 +3,18 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "blog:generate": "node ./scripts/generate-blog-index.mjs",
+    "new:faq": "node ./scripts/new-entry.mjs faq",
+    "new:kb": "node ./scripts/new-entry.mjs kb",
+    "dev": "yarn blog:generate && astro dev",
+    "start": "yarn blog:generate && astro dev",
+    "build": "yarn blog:generate && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.38.2",
-    "astro": "^6.0.1",
-    "sharp": "^0.34.2"
+    "@astrojs/starlight": "^0.39.2",
+    "astro": "^6.4.2",
+    "sharp": "^0.34.5"
   }
 }

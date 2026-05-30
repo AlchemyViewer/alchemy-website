@@ -1,0 +1,26 @@
+rye:
+  name: Rye Cogtail
+  title: Alchemy Project Director
+  url: https://www.alchemyviewer.org
+  image_url: /author_img/rye.webp
+  email: staff@alchemyviewer.org
+
+cinder:
+  name: Cinder Roxley
+  title: Alchemy Contributor
+  url: https://github.com/cinderblocks
+  image_url: https://avatars.githubusercontent.com/u/449721?v=4
+  email: staff@alchemyviewer.org
+
+luminous:
+  name: Luminous Luminos
+  title: Alchemy DevOps Director
+  url: https://www.alchemyviewer.org
+  email: staff@alchemyviewer.org
+
+darl:
+  name: Unexpectedly Dismantled
+  title: Alchemy UX Director
+  url: https://www.alchemyviewer.org
+  image_url: /author_img/darl.png
+  email: darl@alchemyviewer.org
