@@ -1,6 +1,6 @@
 ---
 title: Alchemy Release 5.0.6.41161
-description: Legacy blog post originally published on 2017-07-24.
+description: Blog post originally published on 2017-07-24.
 ---
 
 > Originally published: 2017-07-24

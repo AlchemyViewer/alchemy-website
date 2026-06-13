@@ -1,6 +1,6 @@
 ---
 title: We're Not Dead
-description: Legacy blog post originally published on 2015-05-16.
+description: Blog post originally published on 2015-05-16.
 ---
 
 > Originally published: 2015-05-16

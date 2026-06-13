@@ -1,6 +1,6 @@
 ---
 title: Alchemy Viewer's new site
-description: Legacy blog post originally published on 2014-10-18.
+description: Blog post originally published on 2014-10-18.
 ---
 
 > Originally published: 2014-10-18

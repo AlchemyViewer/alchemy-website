@@ -1,6 +1,6 @@
 ---
 title: Patented Media Formats
-description: Legacy blog post originally published on 2017-11-28.
+description: Blog post originally published on 2017-11-28.
 ---
 
 > Originally published: 2017-11-28

@@ -1,11 +1,8 @@
 ---
 title: Alchemy Beta 3.7.19
-description: Legacy blog post originally published on 2014-10-27.
+description: Blog post originally published on 2014-10-27.
 ---
-
 > Originally published: 2014-10-27
-> Tags: alchemy, beta, release
-> Authors: cinder
 
 Woah, like woah! We are excited to see you all liking Alchemy so much. We have been working hard since last release ironing out bugs and improving the experience. This release is jam-packed with tasty goodness, and you're going to want to check it out. Here's the run down:
 

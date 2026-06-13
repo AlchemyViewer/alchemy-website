@@ -1,6 +1,6 @@
 ---
 title: Alchemy Release 3.8.5
-description: Legacy blog post originally published on 2015-10-25.
+description: Blog post originally published on 2015-10-25.
 ---
 
 > Originally published: 2015-10-25

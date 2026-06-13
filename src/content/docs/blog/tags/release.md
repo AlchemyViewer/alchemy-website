@@ -17,6 +17,4 @@ description: Blog posts tagged release.
 - 2015-07-16 - [Alchemy Beta 3.8.1](../../2015-07-16-alchemy-beta-381/)
 - 2015-06-16 - [Alchemy Beta 3.8.0](../../2015-06-16-alchemy-beta-380/)
 - 2014-12-25 - [Alchemy Beta 3.7.23](../../2014-12-25-alchemy-beta-3723/)
-- 2014-10-27 - [Alchemy Beta 3.7.19](../../2014-10-27-alchemy-beta-3719/)
-- 2014-08-28 - [Alchemy Beta 3.7.14 - TPV Celebratory Beta](../../2014-08-28-alchemy-beta-3714/)
 - 2014-04-27 - [Lights... Camera... Release!](../../2014-04-27-light-camera-release/)

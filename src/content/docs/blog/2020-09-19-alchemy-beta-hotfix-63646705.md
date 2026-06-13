@@ -1,6 +1,6 @@
 ---
 title: Alchemy Beta Hotfix 6.3.6.46705
-description: Legacy blog post originally published on 2020-09-19.
+description: Blog post originally published on 2020-09-19.
 ---
 
 > Originally published: 2020-09-19

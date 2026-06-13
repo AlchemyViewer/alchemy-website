@@ -1,6 +1,6 @@
 ---
 title: A small status update.
-description: Legacy blog post originally published on 2020-09-18.
+description: Blog post originally published on 2020-09-18.
 ---
 
 > Originally published: 2020-09-18

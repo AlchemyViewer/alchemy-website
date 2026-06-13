@@ -1,6 +1,6 @@
 ---
 title: I'm not dead yet!
-description: Legacy blog post originally published on 2019-12-12.
+description: Blog post originally published on 2019-12-12.
 ---
 
 > Originally published: 2019-12-12

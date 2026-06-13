@@ -1,6 +1,6 @@
 ---
 title: Alchemy Release 4.0.0
-description: Legacy blog post originally published on 2016-07-25.
+description: Blog post originally published on 2016-07-25.
 ---
 
 > Originally published: 2016-07-25

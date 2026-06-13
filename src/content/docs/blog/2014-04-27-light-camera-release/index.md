@@ -1,6 +1,6 @@
 ---
 title: Lights... Camera... Release!
-description: Legacy blog post originally published on 2014-04-27.
+description: Blog post originally published on 2014-04-27.
 ---
 
 > Originally published: 2014-04-27

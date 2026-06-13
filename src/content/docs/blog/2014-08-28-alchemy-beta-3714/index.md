@@ -1,11 +1,8 @@
 ---
 title: Alchemy Beta 3.7.14 - TPV Celebratory Beta
-description: Legacy blog post originally published on 2014-08-28.
+description: Blog post originally published on 2014-08-28.
 ---
-
 > Originally published: 2014-08-28
-> Tags: alchemy, beta, profile, release
-> Authors: cinder
 
 ![region tracker](./region-tracker.webp)
 

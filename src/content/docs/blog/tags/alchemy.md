@@ -26,7 +26,5 @@ description: Blog posts tagged alchemy.
 - 2015-06-16 - [Alchemy Beta 3.8.0](../../2015-06-16-alchemy-beta-380/)
 - 2015-05-16 - [We're Not Dead](../../2015-05-16-were-not-dead/)
 - 2014-12-25 - [Alchemy Beta 3.7.23](../../2014-12-25-alchemy-beta-3723/)
-- 2014-10-27 - [Alchemy Beta 3.7.19](../../2014-10-27-alchemy-beta-3719/)
 - 2014-10-18 - [Alchemy Viewer's new site](../../2014-10-18-alchemy-new-site/)
-- 2014-08-28 - [Alchemy Beta 3.7.14 - TPV Celebratory Beta](../../2014-08-28-alchemy-beta-3714/)
 - 2014-04-27 - [Lights... Camera... Release!](../../2014-04-27-light-camera-release/)

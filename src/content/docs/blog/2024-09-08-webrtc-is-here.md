@@ -1,6 +1,6 @@
 ---
 title: WebRTC, you see?
-description: Legacy blog post originally published on 2024-09-09.
+description: Blog post originally published on 2024-09-09.
 ---
 
 > Originally published: 2024-09-09
