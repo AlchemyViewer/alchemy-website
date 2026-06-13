@@ -4,42 +4,49 @@
   --sl-color-accent: #33a56b;
   --sl-color-accent-high: #9ce3bf;
 
-  /* Custom scene palette for the sky-platform atmosphere. */
-  --scene-sky-color: #7db6de;
-  --scene-haze-color: #cbe8ff;
-  --scene-depth-color: #1a4663;
+  /* Alchemical laboratory + technology atmosphere palette. */
+  --scene-verdant-color: #1f6b42; /* deep forest green — branded reagent */
+  --scene-arcane-color: #1e1430;  /* deep arcane purple — mystic depth */
+  --scene-steel-color: #1a2d40;   /* cold steel blue — technological edge */
 }
 
 :root[data-theme='light'] {
   --page-link: #1d7a4b;
   --page-link-hover: #135c37;
   --page-border: color-mix(in oklab, var(--sl-color-text) 18%, transparent);
-  --page-surface: color-mix(in oklab, var(--sl-color-bg) 94%, var(--sl-color-accent) 6%);
-  --page-surface-strong: color-mix(in oklab, var(--sl-color-bg) 88%, var(--sl-color-accent) 12%);
-  --page-panel-shadow: 0 8px 24px color-mix(in oklab, var(--scene-sky-color) 26%, transparent);
-  --page-bg-color: color-mix(in oklab, var(--sl-color-bg) 89%, var(--scene-haze-color) 11%);
+  --page-surface: color-mix(in oklab, var(--sl-color-bg) 93%, var(--scene-verdant-color) 7%);
+  --page-surface-strong: color-mix(in oklab, var(--sl-color-bg) 87%, var(--sl-color-accent) 13%);
+  --page-panel-shadow: 0 8px 24px color-mix(in oklab, var(--scene-verdant-color) 18%, transparent);
+  --page-bg-color: color-mix(in oklab, var(--sl-color-bg) 94%, var(--scene-arcane-color) 6%);
+  /* Tech grid: fine blueprint lines at low opacity */
+  --bg-grid:
+    repeating-linear-gradient(0deg,   color-mix(in oklab, var(--scene-steel-color) 9%, transparent) 0px, transparent 1px, transparent 39px, color-mix(in oklab, var(--scene-steel-color) 9%, transparent) 40px),
+    repeating-linear-gradient(90deg,  color-mix(in oklab, var(--scene-steel-color) 9%, transparent) 0px, transparent 1px, transparent 39px, color-mix(in oklab, var(--scene-steel-color) 9%, transparent) 40px);
   --page-bg-image:
-    radial-gradient(65% 24% at 50% 88%, color-mix(in oklab, var(--sl-color-accent) 16%, transparent), transparent 70%),
-    radial-gradient(44% 11% at 50% 91%, color-mix(in oklab, var(--sl-color-bg) 70%, var(--scene-haze-color) 30%), transparent 72%),
-    radial-gradient(1300px 720px at 82% -14%, color-mix(in oklab, var(--scene-haze-color) 38%, transparent), transparent 62%),
-    radial-gradient(1200px 700px at 8% 10%, color-mix(in oklab, var(--scene-sky-color) 28%, transparent), transparent 65%),
+    /* Hero spotlight — focused radial behind the hero area */
+    radial-gradient(55% 38% at 50% 18%, color-mix(in oklab, var(--sl-color-accent) 14%, transparent), transparent 68%),
+    /* Atmosphere radials — boosted from before */
+    radial-gradient(70% 28% at 50% 92%, color-mix(in oklab, var(--scene-verdant-color) 28%, transparent), transparent 68%),
+    radial-gradient(1400px 780px at 88% -18%, color-mix(in oklab, var(--scene-steel-color) 34%, transparent), transparent 58%),
+    radial-gradient(1300px 760px at 4% 12%,  color-mix(in oklab, var(--scene-arcane-color) 22%, transparent), transparent 62%),
     linear-gradient(
       180deg,
-      color-mix(in oklab, var(--scene-haze-color) 24%, transparent) 0%,
-      color-mix(in oklab, var(--scene-sky-color) 16%, transparent) 42%,
-      color-mix(in oklab, var(--sl-color-accent) 7%, transparent) 68%,
+      color-mix(in oklab, var(--scene-steel-color) 22%, transparent) 0%,
+      color-mix(in oklab, var(--scene-arcane-color) 12%, transparent) 40%,
+      color-mix(in oklab, var(--scene-verdant-color) 18%, transparent) 70%,
       transparent 100%
-    );
+    ),
+    var(--bg-grid);
   --home-panel-gradient:
     linear-gradient(
       165deg,
-      color-mix(in oklab, var(--page-surface) 88%, var(--scene-haze-color) 12%),
-      color-mix(in oklab, var(--page-surface) 86%, var(--sl-color-accent) 14%)
+      color-mix(in oklab, var(--page-surface) 90%, var(--scene-steel-color) 10%),
+      color-mix(in oklab, var(--page-surface) 87%, var(--sl-color-accent) 13%)
     );
   --home-panel-secondary-gradient:
     linear-gradient(
       170deg,
-      color-mix(in oklab, var(--page-surface) 78%, var(--scene-sky-color) 22%),
+      color-mix(in oklab, var(--page-surface) 80%, var(--scene-verdant-color) 20%),
       color-mix(in oklab, var(--page-surface-strong) 86%, var(--sl-color-bg) 14%)
     );
   --home-panel-hover-shadow: 0 12px 32px color-mix(in oklab, var(--sl-color-accent) 24%, transparent);
@@ -49,41 +56,151 @@
   --page-link: #75d6a1;
   --page-link-hover: #a2e9c2;
   --page-border: color-mix(in oklab, var(--sl-color-text) 28%, transparent);
-  --page-surface: color-mix(in oklab, var(--sl-color-bg) 92%, var(--sl-color-accent) 8%);
-  --page-surface-strong: color-mix(in oklab, var(--sl-color-bg) 86%, var(--sl-color-accent) 14%);
-  --page-panel-shadow: 0 8px 24px color-mix(in oklab, var(--scene-depth-color) 22%, transparent);
-  --page-bg-color: color-mix(in oklab, var(--sl-color-bg) 97%, var(--scene-depth-color) 3%);
+  --page-surface: color-mix(in oklab, var(--sl-color-bg) 90%, var(--scene-arcane-color) 10%);
+  --page-surface-strong: color-mix(in oklab, var(--sl-color-bg) 84%, var(--sl-color-accent) 16%);
+  --page-panel-shadow: 0 8px 28px color-mix(in oklab, var(--scene-arcane-color) 36%, transparent);
+  --page-bg-color: color-mix(in oklab, var(--sl-color-bg) 93%, var(--scene-arcane-color) 7%);
+  /* Tech grid: faint circuit lines, more visible in dark */
+  --bg-grid:
+    repeating-linear-gradient(0deg,   color-mix(in oklab, var(--scene-steel-color) 22%, transparent) 0px, transparent 1px, transparent 39px, color-mix(in oklab, var(--scene-steel-color) 22%, transparent) 40px),
+    repeating-linear-gradient(90deg,  color-mix(in oklab, var(--scene-steel-color) 22%, transparent) 0px, transparent 1px, transparent 39px, color-mix(in oklab, var(--scene-steel-color) 22%, transparent) 40px);
   --page-bg-image:
-    radial-gradient(60% 22% at 50% 88%, color-mix(in oklab, var(--sl-color-accent) 10%, transparent), transparent 72%),
-    radial-gradient(44% 11% at 50% 91%, color-mix(in oklab, var(--sl-color-bg) 82%, var(--scene-depth-color) 18%), transparent 74%),
-    radial-gradient(1200px 650px at 85% -15%, color-mix(in oklab, var(--scene-haze-color) 9%, transparent), transparent 62%),
-    radial-gradient(1120px 640px at 0% 8%, color-mix(in oklab, var(--scene-sky-color) 8%, transparent), transparent 64%),
+    /* Hero spotlight — green/teal glow behind hero */
+    radial-gradient(55% 40% at 50% 16%, color-mix(in oklab, var(--sl-color-accent) 18%, transparent), transparent 66%),
+    /* Atmosphere radials — significantly boosted */
+    radial-gradient(66% 28% at 50% 90%, color-mix(in oklab, var(--scene-verdant-color) 32%, transparent), transparent 70%),
+    radial-gradient(1300px 700px at 90% -18%, color-mix(in oklab, var(--scene-steel-color) 38%, transparent), transparent 58%),
+    radial-gradient(1200px 680px at 0% 10%,  color-mix(in oklab, var(--scene-arcane-color) 55%, transparent), transparent 60%),
     linear-gradient(
       180deg,
-      color-mix(in oklab, var(--scene-depth-color) 14%, transparent) 0%,
-      color-mix(in oklab, var(--scene-depth-color) 8%, transparent) 48%,
-      color-mix(in oklab, var(--sl-color-accent) 3%, transparent) 70%,
+      color-mix(in oklab, var(--scene-arcane-color) 48%, transparent) 0%,
+      color-mix(in oklab, var(--scene-arcane-color) 26%, transparent) 45%,
+      color-mix(in oklab, var(--scene-verdant-color) 20%, transparent) 72%,
       transparent 100%
-    );
+    ),
+    var(--bg-grid);
   --home-panel-gradient:
     linear-gradient(
       165deg,
-      color-mix(in oklab, var(--page-surface) 94%, var(--scene-haze-color) 6%),
-      color-mix(in oklab, var(--page-surface) 92%, var(--sl-color-accent) 8%)
+      color-mix(in oklab, var(--page-surface) 94%, var(--scene-arcane-color) 6%),
+      color-mix(in oklab, var(--page-surface) 90%, var(--sl-color-accent) 10%)
     );
   --home-panel-secondary-gradient:
     linear-gradient(
       170deg,
-      color-mix(in oklab, var(--page-surface) 90%, var(--scene-sky-color) 10%),
+      color-mix(in oklab, var(--page-surface) 88%, var(--scene-verdant-color) 12%),
       color-mix(in oklab, var(--page-surface-strong) 92%, var(--sl-color-bg) 8%)
     );
-  --home-panel-hover-shadow: 0 10px 24px color-mix(in oklab, var(--sl-color-accent) 14%, transparent);
+  --home-panel-hover-shadow: 0 10px 28px color-mix(in oklab, var(--sl-color-accent) 22%, transparent);
 }
 
-/* Global atmosphere: floating platform and sky depth. */
+/* Global atmosphere: alchemical laboratory + technology. */
 body {
   background-color: var(--page-bg-color);
   background-image: var(--page-bg-image);
+}
+
+/*
+  Grain texture overlay — SVG turbulence noise painted as a pseudo-element.
+  Gives the surface a tactile, material quality (parchment/anodized metal).
+  pointer-events: none ensures it never blocks interaction.
+  z-index: 0 keeps it above the body background but below Starlight's opaque
+  content panels (sidebar, content area) which carry their own backgrounds.
+  It is suppressed entirely under prefers-contrast: more (see below).
+*/
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+:root[data-theme='dark'] body::before {
+  opacity: 0.045;
+}
+
+/*
+  High-contrast mode (WCAG 1.4.3 / prefers-contrast: more).
+  Users who need maximum legibility get:
+    - no grain overlay
+    - flat backgrounds (no gradient layering)
+    - stronger borders
+    - boosted link saturation
+*/
+@media (prefers-contrast: more) {
+  body::before {
+    display: none;
+  }
+
+  body {
+    background-image: none;
+  }
+
+  :root[data-theme='light'] {
+    --page-link: #155c36;
+    --page-link-hover: #0d3d24;
+    --page-border: color-mix(in oklab, var(--sl-color-text) 40%, transparent);
+    --page-bg-image: none;
+    --home-panel-gradient: none;
+    --home-panel-secondary-gradient: none;
+    --page-panel-shadow: none;
+    --home-panel-hover-shadow: none;
+  }
+
+  :root[data-theme='dark'] {
+    --page-link: #8de8b4;
+    --page-link-hover: #b8f5d5;
+    --page-border: color-mix(in oklab, var(--sl-color-text) 50%, transparent);
+    --page-bg-image: none;
+    --home-panel-gradient: none;
+    --home-panel-secondary-gradient: none;
+    --page-panel-shadow: none;
+    --home-panel-hover-shadow: none;
+  }
+
+  :where(.sl-markdown-content, main article, main .content) :where(h2) {
+    border-top-width: 2px;
+  }
+
+  :where(.sl-markdown-content, main article, main .content) :where(blockquote) {
+    border-inline-start-width: 4px;
+    font-style: normal;
+  }
+
+  :focus-visible {
+    outline-width: 3px;
+    outline-offset: 4px;
+  }
+}
+
+/*
+  Reduced transparency (macOS "Reduce transparency" / prefers-reduced-transparency).
+  Users who are affected by layered translucent backgrounds get flat surfaces.
+*/
+@media (prefers-reduced-transparency: reduce) {
+  body {
+    background-image: none;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  :root[data-theme='light'] {
+    --page-bg-image: none;
+    --home-panel-gradient: var(--page-surface);
+    --home-panel-secondary-gradient: var(--page-surface-strong);
+  }
+
+  :root[data-theme='dark'] {
+    --page-bg-image: none;
+    --home-panel-gradient: var(--page-surface);
+    --home-panel-secondary-gradient: var(--page-surface-strong);
+  }
 }
 
 /* Apply consistent content styles to docs and custom markdown pages. */
@@ -92,7 +209,11 @@ body {
 }
 
 :where(.sl-markdown-content, main article, main .content) :where(h1, h2, h3) {
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+}
+
+:where(.sl-markdown-content, main article, main .content) :where(h1) {
+  letter-spacing: 0.04em;
 }
 
 :where(.sl-markdown-content, main article, main .content) :where(h2) {
@@ -116,14 +237,22 @@ body {
 }
 
 :where(.sl-markdown-content, main article, main .content) :where(blockquote) {
-  border-inline-start: 4px solid var(--sl-color-accent);
+  border-inline-start: 3px solid var(--sl-color-accent);
   background: var(--page-surface);
-  border-radius: 0.4rem;
+  border-radius: 0 0.4rem 0.4rem 0;
   padding: 0.75rem 1rem;
+  font-style: italic;
 }
 
 :where(.sl-markdown-content, main article, main .content) :where(code) {
   border-radius: 0.3rem;
+}
+
+/* Keyboard focus is always visually distinct (a11y). */
+:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 3px;
+  border-radius: 0.2rem;
 }
 
 .hero img {
