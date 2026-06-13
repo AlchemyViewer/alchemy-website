@@ -23,7 +23,7 @@ Every platform needs a C++ toolchain plus:
 - **CMake** 3.27+
 - **Git**
 - **Python** 3.13+ (used for build-time scripts)
-- **Rust** and **.NET SDK** (only required when producing installer packages, enabled by default)
+- **Rust** and **.NET SDK** (only required when producing installer packages; disable with `-DPACKAGE=OFF` to skip)
 
 Install commands are platform-specific and listed below.
 
@@ -37,7 +37,7 @@ Install the following:
 - [CMake](https://cmake.org/download/) 3.27+
 - [Git for Windows](https://git-scm.com/install/windows)
 - [Python 3.13+](https://www.python.org/downloads/) (enable **Add Python to PATH** during install)
-- [Rust](https://rust-lang.org/tools/install/) (packaging only)
+- [Rust](https://rust-lang.org/tools/install/) (packaging only; run `rustup-init.exe` and accept defaults)
 - [.NET SDK](https://dotnet.microsoft.com/en-us/download) (packaging only)
 
 Sanity-check in a fresh terminal:
@@ -78,7 +78,7 @@ Install system packages for your distro:
 ```bash
 sudo pacman -Syu automake autoconf autoconf-archive base-devel cmake fontconfig git glib2-devel \
     gstreamer gst-plugins-base-libs ninja libglvnd libtool libvlc libx11 pkgconf python \
-    wayland dotnet-sdk rustup zip
+    wayland dotnet-sdk rustup zip nasm
 ```
 
 #### Debian 12+
@@ -93,7 +93,7 @@ sudo apt install \
     libthai-dev libtool libudev-dev libunwind-dev liburing-dev libvlc-dev libwayland-dev \
     libx11-dev libxcursor-dev libxext-dev libxfixes-dev libxft-dev libxi-dev libxinerama-dev \
     libxkbcommon-dev libxrandr-dev libxss-dev libxtst-dev linux-libc-dev ninja-build \
-    pkgconf tar tex-common texinfo unzip zip dotnet-sdk-10.0 rustup
+    pkgconf tar tex-common texinfo unzip zip dotnet-sdk-10.0 rustup nasm
 ```
 
 #### Ubuntu 22.04+
@@ -108,7 +108,7 @@ sudo apt install \
     libthai-dev libtool libudev-dev libunwind-dev liburing-dev libvlc-dev libwayland-dev \
     libx11-dev libxcursor-dev libxext-dev libxfixes-dev libxft-dev libxi-dev libxinerama-dev \
     libxkbcommon-dev libxrandr-dev libxss-dev libxtst-dev linux-libc-dev ninja-build \
-    pkgconf tar tex-common texinfo unzip zip dotnet-sdk-10.0 rustup
+    pkgconf tar tex-common texinfo unzip zip dotnet-sdk-10.0 rustup nasm
 ```
 
 #### Fedora / RHEL
@@ -236,7 +236,7 @@ The first configure run downloads and builds all vcpkg dependencies from source.
 
 ### Workflow presets (one-shot configure + build)
 
-Workflow presets run configure and build together:
+Workflow presets run configure and build as a single command. Useful for CI and one-off release builds:
 
 ```bash
 cmake --workflow --preset ninja-os-release
@@ -244,7 +244,7 @@ cmake --workflow --preset vs2026-os-release
 cmake --workflow --preset xcode-os-release
 ```
 
-See `workflowPresets` in [indra/CMakePresets.json](https://github.com/AlchemyViewer/Alchemy/blob/develop/indra/CMakePresets.json).
+See `workflowPresets` in [indra/CMakePresets.json](https://github.com/AlchemyViewer/Alchemy/blob/develop/indra/CMakePresets.json) for the full set.
 
 ## Build
 
@@ -381,7 +381,7 @@ Unit tests live alongside the library they cover in `indra/<library>/tests/`, wr
 
 ## Packaging
 
-Release packages are produced by [Velopack](https://velopack.io). The packaging step runs automatically after a successful build when `PACKAGE=ON` (default).
+Release packages are produced by [Velopack](https://velopack.io/). The packaging step runs automatically after a successful build when `PACKAGE=ON` (the default).
 
 To skip packaging during development:
 
@@ -389,7 +389,7 @@ To skip packaging during development:
 cmake -S indra --preset <preset> -DPACKAGE=OFF
 ```
 
-Velopack also requires `dotnet tool restore` so the `vpk` CLI is available.
+Velopack also requires `dotnet tool restore` to have been run so the `vpk` CLI is on PATH.
 
 ## Troubleshooting
 
@@ -440,7 +440,7 @@ Packaging uses Velopack, which invokes Cargo. Install a stable Rust toolchain:
 rustup default stable
 ```
 
-Only required when `PACKAGE=ON`.
+Only required when `PACKAGE=ON` (the default).
 
 ### Warnings fail the build
 
@@ -482,3 +482,5 @@ Double-check the distro package list in [Platform setup](#platform-setup). Commo
 
 - [Troubleshooting Builds](./troubleshooting)
 - [Content contributions](../../contributing/content-contributions)
+- [BUILD.md on GitHub](https://github.com/AlchemyViewer/Alchemy/blob/develop/doc/BUILD.md)
+- [ARCHITECTURE.md on GitHub](https://github.com/AlchemyViewer/Alchemy/blob/develop/doc/ARCHITECTURE.md)

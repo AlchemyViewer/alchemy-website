@@ -8,8 +8,6 @@ Alchemy is a Second Life™ and OpenMetaverse compatible viewer striving to be a
 ## Meet The Team
 
 - [Rye Cogtail](https://my.secondlife.com/rye.cogtail) - Project Director
-- [Kayla](https://my.secondlife.com/luminous.luminos) - DevOps Director
-- [Darl](https://my.secondlife.com/unexpectedly.dismantled) - UX Director
 
 ## Software Provided to us graciously
 
