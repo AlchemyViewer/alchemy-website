@@ -17,6 +17,14 @@ Provide a concise answer in 2 to 4 sentences.
 
 Add extra context only if needed.
 
+## Images
+
+Place screenshots in `images/<entry-slug>/` and reference with:
+
+```markdown
+![alt text](./images/<entry-slug>/file.webp)
+```
+
 ## Related Links
 
 - Add links to downloads, docs, blog posts, or issue trackers.

@@ -5,10 +5,12 @@ const root = process.cwd();
 const docsRoot = path.join(root, 'src/content/docs');
 
 const kind = process.argv[2];
-const rawTitle = process.argv.slice(3).join(' ').trim();
+const category = process.argv[3];
+const rawTitle = process.argv.slice(4).join(' ').trim();
 
 if (!kind || !rawTitle) {
-  console.error('Usage: node ./scripts/new-entry.mjs <faq|kb> "Title or Question"');
+  console.error('Usage: node ./scripts/new-entry.mjs <faq|kb> [category] "Title or Question"');
+  console.error('  e.g. node ./scripts/new-entry.mjs faq Settings "How do I hide everyone?"');
   process.exit(1);
 }
 
@@ -27,10 +29,10 @@ function slugify(input) {
     .replace(/-{2,}/g, '-');
 }
 
-const date = new Date().toISOString().slice(0, 10);
 const slug = slugify(rawTitle);
-const fileName = `${date}-${slug}.md`;
-const outPath = path.join(docsRoot, dir, fileName);
+const parentDir = category ? path.join(docsRoot, dir, category) : path.join(docsRoot, dir);
+const outPath = path.join(parentDir, `${slug}.md`);
+const imagesDir = path.join(parentDir, 'images', slug);
 
 if (fs.existsSync(outPath)) {
   console.error(`File already exists: ${outPath}`);
@@ -38,10 +40,12 @@ if (fs.existsSync(outPath)) {
 }
 
 const template = kind === 'faq'
-  ? `---\ntitle: ${rawTitle}\ndescription: FAQ entry: ${rawTitle}\n---\n\n## Question\n\n${rawTitle}\n\n## Answer\n\nAdd a concise answer in plain language.\n\n## Details\n\nAdd extra context, caveats, and links if needed.\n`
-  : `---\ntitle: ${rawTitle}\ndescription: Knowledge base article: ${rawTitle}\n---\n\n## Summary\n\nWrite a short overview of this issue or topic.\n\n## Symptoms\n\n- Describe what users observe.\n\n## Cause\n\nExplain the root cause.\n\n## Resolution\n\n1. Step one.\n2. Step two.\n3. Verify result.\n\n## Notes\n\nAdd platform-specific notes and follow-up actions.\n`;
+  ? `---\ntitle: "${rawTitle}"\ndescription: "FAQ entry: ${rawTitle}"\n---\n\n## Question\n\n${rawTitle}\n\n## Answer\n\nAdd a concise answer in plain language.\n\n## Details\n\nAdd extra context, caveats, and links if needed.\n\n## Images\n\n![alt text](./images/${slug}/example.webp)\n`
+  : `---\ntitle: "${rawTitle}"\ndescription: "Knowledge base article: ${rawTitle}"\n---\n\n## Summary\n\nWrite a short overview of this issue or topic.\n\n## Symptoms\n\n- Describe what users observe.\n\n## Cause\n\nExplain the root cause.\n\n## Resolution\n\n1. Step one.\n2. Step two.\n3. Verify result.\n\n## Notes\n\nAdd platform-specific notes and follow-up actions.\n\n## Images\n\n![alt text](./images/${slug}/example.webp)\n`;
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, template, 'utf8');
+fs.mkdirSync(imagesDir, { recursive: true });
 
 console.log(`Created ${path.relative(root, outPath)}`);
+console.log(`Created ${path.relative(root, imagesDir)}/`);

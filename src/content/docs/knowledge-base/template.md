@@ -24,6 +24,14 @@ Describe the root cause clearly.
 2. Step two.
 3. Verification step.
 
+## Images
+
+Place screenshots in `images/<entry-slug>/` and reference with:
+
+```markdown
+![alt text](./images/<entry-slug>/file.webp)
+```
+
 ## Notes
 
 Add edge cases, platform-specific differences, or follow-up actions.

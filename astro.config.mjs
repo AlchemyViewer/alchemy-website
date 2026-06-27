@@ -4,6 +4,9 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	image: {
+		service: { entrypoint: 'astro/assets/services/noop' },
+	},
 	site: 'https://www.alchemyviewer.org',
 	integrations: [
 		starlight({
