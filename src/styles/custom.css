@@ -96,8 +96,17 @@
 
 /* Global atmosphere: alchemical laboratory + technology. */
 body {
+  min-height: 100vh;
   background-color: var(--page-bg-color);
   background-image: var(--page-bg-image);
+  background-attachment: fixed;
+}
+
+/* Only enable view transitions if the user is okay with motion */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
 }
 
 /*
